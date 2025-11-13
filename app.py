@@ -11,6 +11,7 @@ import json
 from gtts import gTTS
 from googletrans import Translator
 
+
 def on_publish(client,userdata,result):             #create function for callback
     print("el dato ha sido publicado \n")
     pass
@@ -31,8 +32,54 @@ client1.on_message = on_message
 st.title("INTERFACES MULTIMODALES")
 st.subheader("CONTROL POR VOZ")
 
-image = Image.open('voice_ctrl.jpg')
+st.markdown("""
+    <style>
+    /* Fondo con gradiente suave */
+    [data-testid="stAppViewContainer"] {
+        background: linear-gradient(135deg, #ffe6f2 0%, #d6e0ff 100%);
+    }
+    /* Título principal */
+    h1 {
+        text-align: center;
+        color: #6c3cb8;
+        font-family: 'Comic Sans MS', cursive;
+        font-size: 2.5em !important;
+    }
+    /* Subtítulo */
+    h2, h3, h4 {
+        text-align: center;
+        color: #7b519d;
+        font-family: 'Poppins', sans-serif;
+    }
+    /* Texto normal */
+    p, div, span {
+        font-family: 'Poppins', sans-serif;
+        color: #333333;
+    }
+    /* Imagen centrada */
+    .stImage {
+        display: flex;
+        justify-content: center;
+    }
+    /* Botón de Bokeh */
+    .bk-root .bk-btn {
+        background: linear-gradient(135deg, #ffb6c1, #d8b4fe);
+        color: white !important;
+        border-radius: 12px !important;
+        border: none !important;
+        font-size: 1.2em;
+        padding: 8px 20px;
+        transition: all 0.3s ease;
+    }
+    .bk-root .bk-btn:hover {
+        background: linear-gradient(135deg, #f472b6, #a78bfa);
+        transform: scale(1.05);
+    }
+    </style>
+""", unsafe_allow_html=True)
 
+
+image = Image.open('voice_ctrl.jpg')
 st.image(image, width=200)
 
 
