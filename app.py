@@ -11,74 +11,8 @@ import json
 from gtts import gTTS
 from googletrans import Translator
 
-# --- CONFIGURACIÓN DE PÁGINA ---
-st.set_page_config(page_title="Casa Inteligente - Control por Voz", page_icon="🎙️", layout="centered")
 
-# --- ESTILO VISUAL (igual al panel táctil) ---
-st.markdown("""
-<style>
-[data-testid="stAppViewContainer"] {
-    background: linear-gradient(135deg, #ede7f6 0%, #f3e5f5 100%);
-}
-[data-testid="stHeader"] {
-    background: rgba(255,255,255,0.4);
-    backdrop-filter: blur(8px);
-}
-h1 {
-    color: #3a2c5a;
-    text-align: center;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    margin-bottom: 0.2em;
-}
-h2 {
-    color: #5b3f8c;
-    text-align: center;
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.3em;
-    margin-bottom: 1em;
-}
-p, div, span {
-    font-family: 'Poppins', sans-serif;
-}
-.card {
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 2em;
-    border-radius: 16px;
-    box-shadow: 0px 3px 10px rgba(0,0,0,0.1);
-    margin-top: 1.5em;
-    text-align: center;
-}
-.voice-img {
-    width: 120px;
-    border-radius: 50%;
-    padding: 10px;
-    background-color: rgba(255,255,255,0.7);
-    box-shadow: 0px 2px 8px rgba(0,0,0,0.15);
-    margin-bottom: 1em;
-}
-.bk-root button {
-    background: linear-gradient(135deg, #7e57c2, #9575cd);
-    color: white !important;
-    border: none !important;
-    border-radius: 12px !important;
-    padding: 0.75em 1.5em !important;
-    font-size: 1em !important;
-    font-family: 'Poppins', sans-serif !important;
-    font-weight: 500 !important;
-    width: 200px !important;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    transition: all 0.3s ease;
-}
-.bk-root button:hover {
-    background: linear-gradient(135deg, #6a1b9a, #7b1fa2) !important;
-    transform: scale(1.05);
-}
-</style>
-""", unsafe_allow_html=True)
-
-# --- FUNCIONES ORIGINALES (sin cambios) ---
-def on_publish(client,userdata,result):             
+def on_publish(client,userdata,result):             #create function for callback
     print("el dato ha sido publicado \n")
     pass
 
@@ -93,23 +27,22 @@ port=1883
 client1= paho.Client("sofimajo")
 client1.on_message = on_message
 
-# --- INTERFAZ PRINCIPAL (mismo contenido, solo embellecido) ---
-st.title("🏠 CASA INTELIGENTE")
-st.subheader("🎙️ CONTROL POR VOZ")
 
-st.markdown('<div class="card">', unsafe_allow_html=True)
 
-# Imagen central
-if os.path.exists('voice_ctrl.jpg'):
-    image = Image.open('voice_ctrl.jpg')
-    st.image(image, width=150)
-else:
-    st.image("https://cdn-icons-png.flaticon.com/512/727/727245.png", width=100)
+st.title("CASA INTELIGENTE")
+st.subheader("CONTROL POR VOZ")
 
-st.markdown('<p style="color:#5b3f8c;">Toca el botón y habla</p>', unsafe_allow_html=True)
 
-# --- BOTÓN DE VOZ (mismo código original) ---
-stt_button = Button(label="🎧 Iniciar escucha", width=200)
+
+image = Image.open('voice_ctrl.jpg')
+st.image(image, width=200)
+
+
+
+
+st.write("Toca el Botón y habla ")
+
+stt_button = Button(label=" Inicio ", width=200)
 
 stt_button.js_on_event("button_click", CustomJS(code="""
     var recognition = new webkitSpeechRecognition();
@@ -135,11 +68,9 @@ result = streamlit_bokeh_events(
     events="GET_TEXT",
     key="listen",
     refresh_on_update=False,
-    override_height=100,
-    debounce_time=0
-)
+    override_height=75,
+    debounce_time=0)
 
-# --- ENVÍO POR MQTT (sin tocar la lógica original) ---
 if result:
     if "GET_TEXT" in result:
         st.write(result.get("GET_TEXT"))
@@ -148,11 +79,9 @@ if result:
         message =json.dumps({"Act1":result.get("GET_TEXT").strip()})
         ret= client1.publish("mensajeproyecto", message)
 
+    
     try:
         os.mkdir("temp")
     except:
         pass
-
-st.markdown('</div>', unsafe_allow_html=True)
-
 
