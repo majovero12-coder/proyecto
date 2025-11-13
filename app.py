@@ -34,21 +34,20 @@ st.subheader("CONTROL POR VOZ")
 
 st.markdown("""
     <style>
-    /* 🌸 Fondo blanco con rosa suave en degradado horizontal */
+    /* 🌸 Fondo rosado claro completo */
     [data-testid="stAppViewContainer"] {
-        background: linear-gradient(90deg, #ffffff 0%, #ffe6f2 100%);
-        padding: 0 !important;
+        background-color: #ffe6f2;
     }
 
-    /* Contenedor principal limpio */
+    /* Contenedor central */
     div.block-container {
         background: transparent !important;
-        padding-top: 50px !important;
+        padding-top: 40px !important;
         margin: 0 auto !important;
         max-width: 900px !important;
     }
 
-    /* 🎀 Título principal */
+    /* 💕 Título principal */
     h1 {
         text-align: center;
         color: #b33c7d;
@@ -59,7 +58,7 @@ st.markdown("""
         margin-bottom: 0.2em;
     }
 
-    /* 💕 Subtítulo */
+    /* 💖 Subtítulo */
     h2, h3 {
         text-align: center;
         color: #a23a73;
@@ -74,7 +73,7 @@ st.markdown("""
         display: flex !important;
         justify-content: center !important;
         align-items: center !important;
-        margin-bottom: 25px !important; /* Espacio con el botón */
+        margin-bottom: 25px !important;
     }
 
     [data-testid="stImage"] img {
@@ -83,13 +82,13 @@ st.markdown("""
         border-radius: 15px;
         width: 350px;
         height: auto;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        box-shadow: 0 6px 20px rgba(0,0,0,0.1);
         border: none;
     }
 
-    /* 🌷 Botón elegante */
+    /* 🌷 Botón centrado y elegante */
     .bk-root .bk-btn {
-        background: linear-gradient(90deg, #f6aec9, #e583a9);
+        background: linear-gradient(90deg, #f7b6cc, #f28bb2);
         color: white !important;
         border-radius: 40px !important;
         border: none !important;
@@ -99,15 +98,15 @@ st.markdown("""
         padding: 12px 40px !important;
         box-shadow: 0 4px 10px rgba(0,0,0,0.15);
         width: 220px;
-        margin: auto;
+        margin: 20px auto 0 auto;
         display: block;
     }
 
     .bk-root .bk-btn:hover {
-        background: linear-gradient(90deg, #e6679d, #c94d7d);
+        background: linear-gradient(90deg, #f06b98, #d64a7c);
     }
 
-    /* 💖 Quitar cualquier recuadro o fondo interno */
+    /* 💖 Eliminar cualquier recuadro blanco */
     div[data-testid="stVerticalBlock"],
     div[data-testid="stVerticalBlock"] > div,
     .stElementContainer {
@@ -118,19 +117,20 @@ st.markdown("""
         margin: 0 auto !important;
     }
 
-    /* Centrado del botón */
+    /* Centrar el botón */
     .bk-root {
         display: flex;
         justify-content: center !important;
     }
 
-    /* Sidebar opcional limpia */
+    /* Sidebar limpia */
     [data-testid="stSidebar"] {
         background-color: #fafafa !important;
         border-right: none !important;
     }
     </style>
 """, unsafe_allow_html=True)
+
 
 
 
