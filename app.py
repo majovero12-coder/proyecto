@@ -36,29 +36,28 @@ st.subheader("CONTROL POR VOZ")
 st.markdown("""
     <style>
     [data-testid="stAppViewContainer"] {
-        background: linear-gradient(135deg, #e8eaf6 0%, #f3e5f5 100%);
+        background: linear-gradient(135deg, #ede7f6 0%, #f3e5f5 100%);
     }
 
     [data-testid="stHeader"] {
         background: rgba(255,255,255,0.4);
-        backdrop-filter: blur(10px);
-    }
-
-    [data-testid="stSidebar"] {
-        background-color: #ede7f6;
+        backdrop-filter: blur(8px);
     }
 
     h1 {
-        color: #4a148c;
-        font-family: 'Poppins', sans-serif;
+        color: #3a2c5a;
         text-align: center;
+        font-family: 'Poppins', sans-serif;
         font-weight: 700;
+        margin-bottom: 0.2em;
     }
 
-    h2, h3 {
-        color: #6a1b9a;
-        font-family: 'Poppins', sans-serif;
+    h2 {
+        color: #5b3f8c;
         text-align: center;
+        font-family: 'Poppins', sans-serif;
+        font-size: 1.3em;
+        margin-bottom: 1em;
     }
 
     .stButton>button {
@@ -70,31 +69,32 @@ st.markdown("""
         font-size: 1em;
         font-family: 'Poppins', sans-serif;
         transition: all 0.3s ease;
-        box-shadow: 0px 3px 8px rgba(0,0,0,0.2);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.15);
     }
+
     .stButton>button:hover {
-        background: linear-gradient(135deg, #5e35b1, #7b1fa2);
+        background: linear-gradient(135deg, #6a1b9a, #7b1fa2);
         transform: scale(1.05);
     }
 
-    .block {
-        background-color: rgba(255,255,255,0.85);
-        padding: 1.5em;
+    .card {
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 1.8em;
         border-radius: 16px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        margin: 1.5em 0;
+        box-shadow: 0px 3px 10px rgba(0,0,0,0.1);
+        margin-top: 1.2em;
     }
 
     .subtitle {
         font-family: 'Poppins', sans-serif;
-        color: #6a1b9a;
+        color: #5b3f8c;
         text-align: center;
-        font-size: 1.1em;
+        font-size: 1.05em;
         margin-bottom: 0.8em;
     }
+
     </style>
 """, unsafe_allow_html=True)
-
 
 
 
