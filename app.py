@@ -34,50 +34,83 @@ st.subheader("CONTROL POR VOZ")
 
 st.markdown("""
     <style>
-    /* Fondo con gradiente suave */
+    /* Fondo general con gradiente suave pastel */
     [data-testid="stAppViewContainer"] {
-        background: linear-gradient(135deg, #ffe6f2 0%, #d6e0ff 100%);
+        background: linear-gradient(135deg, #ffe6f2 0%, #e0d6ff 100%);
     }
+
+    /* Centrado general del contenido */
+    .main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
     /* Título principal */
     h1 {
         text-align: center;
         color: #6c3cb8;
         font-family: 'Comic Sans MS', cursive;
-        font-size: 2.5em !important;
+        font-size: 2.8em !important;
+        text-shadow: 2px 2px 4px rgba(108, 60, 184, 0.2);
     }
+
     /* Subtítulo */
-    h2, h3, h4 {
+    h2, h3 {
         text-align: center;
         color: #7b519d;
         font-family: 'Poppins', sans-serif;
+        font-weight: 500;
     }
-    /* Texto normal */
+
+    /* Imagen centrada y con sombra */
+    [data-testid="stImage"] img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 20px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    /* Texto */
     p, div, span {
         font-family: 'Poppins', sans-serif;
         color: #333333;
+        text-align: center;
     }
-    /* Imagen centrada */
-    .stImage {
-        display: flex;
-        justify-content: center;
-    }
-    /* Botón de Bokeh */
+
+    /* Botón del reconocimiento de voz */
     .bk-root .bk-btn {
         background: linear-gradient(135deg, #ffb6c1, #d8b4fe);
         color: white !important;
-        border-radius: 12px !important;
+        border-radius: 15px !important;
         border: none !important;
-        font-size: 1.2em;
-        padding: 8px 20px;
+        font-size: 1.2em !important;
+        padding: 10px 25px !important;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         transition: all 0.3s ease;
     }
+
     .bk-root .bk-btn:hover {
         background: linear-gradient(135deg, #f472b6, #a78bfa);
-        transform: scale(1.05);
+        transform: scale(1.08);
+        box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    }
+
+    /* Ocultar el cuadro blanco debajo del botón */
+    div[data-testid="stVerticalBlock"] > div {
+        background: transparent !important;
+        box-shadow: none !important;
+    }
+
+    /* Centrado del botón */
+    .bk-root {
+        display: flex;
+        justify-content: center;
     }
     </style>
 """, unsafe_allow_html=True)
-
 
 image = Image.open('voice_ctrl.jpg')
 st.image(image, width=200)
