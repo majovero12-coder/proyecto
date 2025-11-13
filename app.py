@@ -68,8 +68,10 @@ st.markdown("""
         padding: 0.75em 1.5em;
         font-size: 1em;
         font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+        width: 220px;
         transition: all 0.3s ease;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
     }
 
     .stButton>button:hover {
@@ -79,10 +81,11 @@ st.markdown("""
 
     .card {
         background-color: rgba(255, 255, 255, 0.8);
-        padding: 1.8em;
+        padding: 2em;
         border-radius: 16px;
         box-shadow: 0px 3px 10px rgba(0,0,0,0.1);
         margin-top: 1.2em;
+        text-align: center;
     }
 
     .subtitle {
@@ -90,11 +93,23 @@ st.markdown("""
         color: #5b3f8c;
         text-align: center;
         font-size: 1.05em;
-        margin-bottom: 0.8em;
+        margin-bottom: 1em;
+    }
+
+    .voice-img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 120px;
+        border-radius: 50%;
+        padding: 10px;
+        background-color: rgba(255,255,255,0.7);
+        box-shadow: 0px 2px 8px rgba(0,0,0,0.15);
     }
 
     </style>
 """, unsafe_allow_html=True)
+
 
 
 
