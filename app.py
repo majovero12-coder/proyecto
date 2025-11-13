@@ -5,9 +5,10 @@ import json
 import time
 from PIL import Image
 
+# --- CONFIGURACIÓN DE PÁGINA ---
 st.set_page_config(page_title="Casa Inteligente - Control por Voz", page_icon="🎙️", layout="centered")
 
-# --- ESTILO ---
+# --- ESTILO VISUAL ---
 st.markdown("""
 <style>
 [data-testid="stAppViewContainer"] {
@@ -29,7 +30,7 @@ h2 {
   text-align: center;
   font-family: 'Poppins', sans-serif;
   margin-top: 0.5em;
-  margin-bottom: 1em;
+  margin-bottom: 1.2em;
 }
 .center {
   display: flex;
@@ -38,9 +39,12 @@ h2 {
   justify-content: center;
 }
 .voice-img {
-  width: 230px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 240px;
   border-radius: 20px;
-  margin-bottom: 1.2em;
+  margin-bottom: 1.5em;
   box-shadow: 0px 4px 12px rgba(0,0,0,0.15);
 }
 .voice-button {
@@ -68,34 +72,37 @@ p {
 </style>
 """, unsafe_allow_html=True)
 
-# --- MQTT ---
+# --- MQTT CONFIG ---
 def on_publish(client, userdata, result):
-  print("el dato ha sido publicado \n")
+    print("el dato ha sido publicado \n")
 
 def on_message(client, userdata, message):
-  global message_received
-  time.sleep(2)
-  message_received = str(message.payload.decode("utf-8"))
-  st.write(message_received)
+    global message_received
+    time.sleep(2)
+    message_received = str(message.payload.decode("utf-8"))
+    st.write(message_received)
 
-broker="broker.mqttdashboard.com"
-port=1883
-client1= paho.Client("sofimajo")
+broker = "broker.mqttdashboard.com"
+port = 1883
+client1 = paho.Client("sofimajo")
 client1.on_message = on_message
 
 # --- INTERFAZ ---
 st.title("🏠 CASA INTELIGENTE")
 st.markdown("<h2>🎙️ CONTROL POR VOZ</h2>", unsafe_allow_html=True)
 
+# Contenedor centrado
 st.markdown('<div class="center">', unsafe_allow_html=True)
 
+# Imagen centrada (más grande y con sombra)
 if os.path.exists('voice_ctrl.jpg'):
-  st.image('voice_ctrl.jpg', width=230)
+    st.markdown('<img src="voice_ctrl.jpg" class="voice-img">', unsafe_allow_html=True)
 else:
-  st.image("https://cdn-icons-png.flaticon.com/512/727/727245.png", width=230)
+    st.markdown('<img src="https://cdn-icons-png.flaticon.com/512/727/727245.png" class="voice-img">', unsafe_allow_html=True)
 
 st.markdown('<p>🎤 Toca el botón y habla</p>', unsafe_allow_html=True)
 
+# --- BOTÓN DE ESCUCHA (funcional + elegante) ---
 st.markdown("""
 <button class="voice-button" id="speak-btn">🎧 Iniciar escucha</button>
 <div id="result" style="display:none; margin-top:1em; color:#4a148c; font-family:'Poppins';"></div>
