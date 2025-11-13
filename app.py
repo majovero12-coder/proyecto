@@ -34,20 +34,14 @@ st.subheader("CONTROL POR VOZ")
 
 st.markdown("""
     <style>
-    /* 🌸 Fondo rosado claro */
+    /* 🌸 Fondo rosado claro completo */
     [data-testid="stAppViewContainer"] {
-        background-color: #ffe6f2 !important;
-        padding: 0 !important;
+        background-color: #ffe6f2;
     }
 
-    /* Centrado del contenido principal */
+    /* Contenedor central */
     div.block-container {
         background: transparent !important;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
         padding-top: 40px !important;
         margin: 0 auto !important;
         max-width: 900px !important;
@@ -59,8 +53,9 @@ st.markdown("""
         color: #b33c7d;
         font-family: 'Playfair Display', serif;
         font-weight: 700;
-        font-size: 2.6em !important;
-        margin-bottom: 0.3em;
+        font-size: 2.8em !important;
+        letter-spacing: 0.5px;
+        margin-bottom: 0.2em;
     }
 
     /* 💖 Subtítulo */
@@ -69,8 +64,8 @@ st.markdown("""
         color: #a23a73;
         font-family: 'Poppins', sans-serif;
         font-weight: 500;
-        font-size: 1.4em;
-        margin-bottom: 1.5em;
+        font-size: 1.5em;
+        margin-bottom: 1.8em;
     }
 
     /* 📸 Imagen centrada */
@@ -78,61 +73,54 @@ st.markdown("""
         display: flex !important;
         justify-content: center !important;
         align-items: center !important;
-        margin: 0 auto 30px auto !important;
-        background: transparent !important;
+        margin-bottom: 25px !important;
     }
 
     [data-testid="stImage"] img {
         display: block;
-        margin: 0 auto;
+        margin: auto;
         border-radius: 15px;
         width: 350px;
         height: auto;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.1);
         border: none;
-        box-shadow: none;
     }
 
-    /* 🌷 Botón centrado */
-    .bk-root {
-        display: flex !important;
-        justify-content: center !important;
-        align-items: center !important;
-        background: transparent !important;
-        margin-top: 10px !important;
-    }
-
+    /* 🌷 Botón centrado y elegante */
     .bk-root .bk-btn {
-        background: linear-gradient(90deg, #f6b0c9, #e784aa);
+        background: linear-gradient(90deg, #f7b6cc, #f28bb2);
         color: white !important;
         border-radius: 40px !important;
         border: none !important;
-        font-size: 1.1em !important;
+        font-size: 1.2em !important;
         font-family: 'Poppins', sans-serif;
         font-weight: 600;
-        padding: 12px 45px !important;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-        width: auto !important;
-        text-align: center;
-        margin: 0 auto !important;
+        padding: 12px 40px !important;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        width: 220px;
+        margin: 20px auto 0 auto;
+        display: block;
     }
 
     .bk-root .bk-btn:hover {
         background: linear-gradient(90deg, #f06b98, #d64a7c);
     }
 
-    /* 💖 Eliminar recuadros blancos de contenedores */
+    /* 💖 Eliminar cualquier recuadro blanco */
     div[data-testid="stVerticalBlock"],
     div[data-testid="stVerticalBlock"] > div,
-    div[data-testid="stHorizontalBlock"],
-    div[data-testid="stHorizontalBlock"] > div,
-    .stElementContainer,
-    .stButton,
-    .st-emotion-cache {
+    .stElementContainer {
         background: transparent !important;
         box-shadow: none !important;
         border: none !important;
         padding: 0 !important;
-        margin: 0 !important;
+        margin: 0 auto !important;
+    }
+
+    /* Centrar el botón */
+    .bk-root {
+        display: flex;
+        justify-content: center !important;
     }
 
     /* Sidebar limpia */
