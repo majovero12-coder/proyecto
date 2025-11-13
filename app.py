@@ -32,16 +32,15 @@ client1.on_message = on_message
 st.title("CASA INTELIGENTE")
 st.subheader("CONTROL POR VOZ")
 
+
 st.markdown("""
     <style>
-    /* Fondo general con degradado */
     [data-testid="stAppViewContainer"] {
         background: linear-gradient(135deg, #e8eaf6 0%, #f3e5f5 100%);
     }
 
-    /* Barra superior */
     [data-testid="stHeader"] {
-        background: rgba(255, 255, 255, 0.4);
+        background: rgba(255,255,255,0.4);
         backdrop-filter: blur(10px);
     }
 
@@ -79,7 +78,7 @@ st.markdown("""
     }
 
     .block {
-        background-color: rgba(255, 255, 255, 0.85);
+        background-color: rgba(255,255,255,0.85);
         padding: 1.5em;
         border-radius: 16px;
         box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -93,7 +92,6 @@ st.markdown("""
         font-size: 1.1em;
         margin-bottom: 0.8em;
     }
-
     </style>
 """, unsafe_allow_html=True)
 
