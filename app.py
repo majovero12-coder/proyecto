@@ -32,7 +32,58 @@ client1.on_message = on_message
 st.title("CASA INTELIGENTE")
 st.subheader("CONTROL POR VOZ")
 
+st.markdown("""
+    <style>
+    /* Fondo general con degradado */
+    [data-testid="stAppViewContainer"] {
+        background: linear-gradient(135deg, #e8eaf6 0%, #f3e5f5 100%);
+    }
 
+    /* Barra superior */
+    [data-testid="stHeader"] {
+        background: rgba(255, 255, 255, 0.4);
+        backdrop-filter: blur(10px);
+    }
+
+    /* Sidebar (si la usas en el futuro) */
+    [data-testid="stSidebar"] {
+        background-color: #ede7f6;
+    }
+
+    h1 {
+        color: #4a148c;
+        font-family: 'Poppins', sans-serif;
+        text-align: center;
+    }
+    h2, h3 {
+        color: #6a1b9a;
+        font-family: 'Poppins', sans-serif;
+        text-align: center;
+    }
+    .stButton>button {
+        background: linear-gradient(135deg, #7e57c2, #9575cd);
+        color: white;
+        border: none;
+        border-radius: 12px;
+        padding: 0.75em 1.5em;
+        font-size: 1em;
+        font-family: 'Poppins', sans-serif;
+        transition: all 0.3s ease;
+        box-shadow: 0px 3px 8px rgba(0,0,0,0.2);
+    }
+    .stButton>button:hover {
+        background: linear-gradient(135deg, #5e35b1, #7b1fa2);
+        transform: scale(1.05);
+    }
+    .block {
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 1.5em;
+        border-radius: 16px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        margin: 1.5em 0;
+    }
+    </style>
+""", unsafe_allow_html=True)
 
 
 
