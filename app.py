@@ -33,19 +33,18 @@ st.title("INTERFACES MULTIMODALES")
 st.subheader("CONTROL POR VOZ")
 st.markdown("""
     <style>
-    /* 🌸 Fondo rosado pastel en degradé horizontal */
+    /* 🌷 Fondo rosado pastel en degradé horizontal */
     [data-testid="stAppViewContainer"] {
-        background: linear-gradient(90deg, #ffe5ec 0%, #ffd6e0 50%, #fddde6 100%);
+        background: linear-gradient(90deg, #ffe6f2 0%, #ffd6e0 50%, #fddde6 100%);
+        padding: 0 !important;
     }
 
-    /* Centrar todo el contenido */
-    .main {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        padding-top: 10px;
+    /* Elimina completamente el fondo y bordes del contenedor principal */
+    div.block-container {
+        background: transparent !important;
+        padding: 0 !important;
+        margin: 0 auto !important;
+        max-width: 900px !important;
     }
 
     /* 💕 Título principal */
@@ -56,7 +55,7 @@ st.markdown("""
         font-weight: 700;
         font-size: 3em !important;
         letter-spacing: 0.5px;
-        margin-bottom: 0.3em;
+        margin-bottom: 0.2em;
     }
 
     /* 💖 Subtítulo */
@@ -65,28 +64,30 @@ st.markdown("""
         color: #8e3a76;
         font-family: 'Playfair Display', serif;
         font-weight: 600;
-        font-size: 1.7em;
+        font-size: 1.6em;
         margin-bottom: 1.5em;
     }
 
-    /* 📸 Imagen centrada (rectangular, no redonda) */
+    /* 📸 Imagen centrada */
     [data-testid="stImage"] {
         display: flex !important;
         justify-content: center !important;
         align-items: center !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
     }
 
     [data-testid="stImage"] img {
         display: block;
-        margin: auto;
-        border-radius: 18px;
+        margin: 0 auto;
+        border-radius: 20px;
+        border: none;
         width: 380px;
         height: auto;
-        border: none;
-        box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
     }
 
-    /* ✨ Texto general */
+    /* 🌸 Texto general */
     p, div, span {
         font-family: 'Playfair Display', serif;
         color: #3c3c3c;
@@ -104,27 +105,38 @@ st.markdown("""
         font-family: 'Playfair Display', serif;
         font-weight: 600;
         padding: 12px 40px !important;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
         width: 240px;
-        margin-top: 10px;
+        margin-top: 15px;
     }
 
     .bk-root .bk-btn:hover {
         background: linear-gradient(90deg, #e6679d, #c94d7d, #a73963);
     }
 
-    /* 💖 Eliminar por completo el recuadro blanco */
-    div[data-testid="stVerticalBlock"], div[data-testid="stVerticalBlock"] > div, div.block-container {
+    /* 🔥 Elimina los recuadros blancos de todos los contenedores internos */
+    div[data-testid="stVerticalBlock"], 
+    div[data-testid="stVerticalBlock"] > div,
+    div[data-testid="stHorizontalBlock"],
+    div[data-testid="stHorizontalBlock"] > div,
+    .stElementContainer {
         background: transparent !important;
         box-shadow: none !important;
+        border: none !important;
         padding: 0 !important;
-        margin: 0 !important;
+        margin: 0 auto !important;
     }
 
     /* Centrado del botón */
     .bk-root {
         display: flex;
-        justify-content: center;
+        justify-content: center !important;
+    }
+
+    /* Oculta el fondo de la sidebar */
+    [data-testid="stSidebar"] {
+        background-color: #f8f9fa !important;
+        border-right: none !important;
     }
     </style>
 """, unsafe_allow_html=True)
