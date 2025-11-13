@@ -23,7 +23,7 @@ h1 {
     text-align: center;
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
-    margin-bottom: 0.2em;
+    margin-bottom: 0.3em;
 }
 h2 {
     color: #5b3f8c;
@@ -36,15 +36,18 @@ h2 {
     padding: 2em;
     border-radius: 16px;
     box-shadow: 0px 3px 10px rgba(0,0,0,0.1);
-    margin-top: 1.2em;
+    margin-top: 2em;
     text-align: center;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
 }
 .voice-button {
     background: linear-gradient(135deg, #7e57c2, #9575cd);
     color: white;
     border: none;
     border-radius: 12px;
-    padding: 0.8em 2em;
+    padding: 0.9em 2em;
     font-size: 1em;
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
@@ -69,7 +72,7 @@ h2 {
 </style>
 """, unsafe_allow_html=True)
 
-# --- FUNCIONES MQTT (sin cambios) ---
+# --- FUNCIONES MQTT ---
 def on_publish(client, userdata, result):
     print("El dato ha sido publicado \n")
 
@@ -88,17 +91,19 @@ client1.on_message = on_message
 st.title("🏠 CASA INTELIGENTE")
 st.subheader("🎙️ CONTROL POR VOZ")
 
+# ---- TARJETA PRINCIPAL ----
 st.markdown('<div class="card">', unsafe_allow_html=True)
 
+# Imagen central
 if os.path.exists('voice_ctrl.jpg'):
     image = Image.open('voice_ctrl.jpg')
     st.image(image, width=150)
 else:
     st.image("https://cdn-icons-png.flaticon.com/512/727/727245.png", width=100)
 
-st.write("🔊 Toca el botón y habla")
+st.markdown('<p style="color:#4a148c;font-family:Poppins;">🎤 Toca el botón y habla</p>', unsafe_allow_html=True)
 
-# --- BOTÓN DE ESCUCHA (sin Bokeh, mismo comportamiento JS) ---
+# --- BOTÓN DE ESCUCHA (con JavaScript real y mismo estilo) ---
 st.markdown("""
 <button class="voice-button" id="speak-btn">🎧 Iniciar escucha</button>
 <div id="result" class="result-box" style="display:none;"></div>
@@ -139,17 +144,3 @@ if ('webkitSpeechRecognition' in window) {
 """, unsafe_allow_html=True)
 
 st.markdown('</div>', unsafe_allow_html=True)
-
-# --- MQTT PUBLICACIÓN ---
-# En Streamlit, el evento JS se recibe con st.session_state o query_params.
-# Aquí lo dejamos listo para publicar cuando tengas texto:
-speech_input = st.session_state.get("speech_input", None)
-
-if speech_input:
-    client1.on_publish = on_publish
-    client1.connect(broker, port)
-    message = json.dumps({"Act1": speech_input.strip()})
-    ret = client1.publish("mensajeproyecto", message)
-    st.success(f"📡 Enviado comando: {speech_input}")
-
-
