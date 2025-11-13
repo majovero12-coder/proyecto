@@ -32,7 +32,7 @@ client1.on_message = on_message
 st.title("CASA INTELIGENTE")
 st.subheader("CONTROL POR VOZ")
 
-sst.markdown("""
+st.markdown("""
     <style>
     /* Fondo general con degradado */
     [data-testid="stAppViewContainer"] {
