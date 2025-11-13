@@ -34,10 +34,9 @@ st.subheader("CONTROL POR VOZ")
 
 st.markdown("""
     <style>
-    /* 🌸 Fondo en degradé horizontal rosado pastel */
+    /* 🌷 Fondo rosado pastel en degradé horizontal */
     [data-testid="stAppViewContainer"] {
         background: linear-gradient(90deg, #ffe5ec 0%, #ffd6e0 50%, #fddde6 100%);
-        animation: fadeIn 1.2s ease-in;
     }
 
     /* Centrar contenido */
@@ -50,7 +49,7 @@ st.markdown("""
         padding-top: 10px;
     }
 
-    /* 🌺 Título principal */
+    /* 💕 Título principal */
     h1 {
         text-align: center;
         color: #d63384;
@@ -58,8 +57,8 @@ st.markdown("""
         font-weight: 800;
         font-size: 3em !important;
         letter-spacing: 1px;
-        text-shadow: 0 3px 10px rgba(214, 51, 132, 0.2);
-        margin-bottom: 0.2em;
+        text-shadow: 0 2px 8px rgba(214, 51, 132, 0.2);
+        margin-bottom: 0.3em;
     }
 
     /* 💖 Subtítulo */
@@ -69,24 +68,19 @@ st.markdown("""
         font-family: 'Quicksand', 'Poppins', sans-serif;
         font-weight: 600;
         font-size: 1.6em;
-        margin-bottom: 1.2em;
+        margin-bottom: 1.5em;
     }
 
-    /* 💫 Imagen redonda con brillo */
+    /* 📸 Imagen rectangular centrada con bordes redondeados */
     [data-testid="stImage"] img {
         display: block;
-        margin: auto;
-        width: 190px;
-        height: 190px;
-        border-radius: 50%;
-        border: 4px solid white;
-        box-shadow: 0 0 25px rgba(255, 128, 171, 0.35);
-        transition: transform 0.4s ease, box-shadow 0.4s ease;
-    }
-
-    [data-testid="stImage"] img:hover {
-        transform: scale(1.08);
-        box-shadow: 0 0 40px rgba(255, 140, 200, 0.6);
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 20px;
+        border: none;
+        width: 380px;
+        height: auto;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
     }
 
     /* ✨ Texto principal */
@@ -94,11 +88,11 @@ st.markdown("""
         font-family: 'Quicksand', 'Poppins', sans-serif;
         color: #4a4a4a;
         text-align: center;
-        font-size: 1.1em;
+        font-size: 1.05em;
         letter-spacing: 0.3px;
     }
 
-    /* 🌈 Botón del reconocimiento de voz */
+    /* 🌈 Botón */
     .bk-root .bk-btn {
         background: linear-gradient(90deg, #ffb6c1, #f48fb1, #f8a5c2);
         color: white !important;
@@ -108,22 +102,21 @@ st.markdown("""
         font-family: 'Quicksand', sans-serif;
         font-weight: 700;
         padding: 12px 40px !important;
-        box-shadow: 0 6px 18px rgba(0,0,0,0.2);
-        transition: all 0.3s ease;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.15);
         margin-top: 15px;
         width: 240px;
     }
 
     .bk-root .bk-btn:hover {
         background: linear-gradient(90deg, #f06292, #ec407a, #d81b60);
-        transform: scale(1.07);
-        box-shadow: 0 8px 22px rgba(0,0,0,0.3);
     }
 
-    /* 💕 Eliminar cuadro blanco */
+    /* 💖 Quitar el cuadro blanco inferior */
     div[data-testid="stVerticalBlock"], div[data-testid="stVerticalBlock"] > div {
         background: transparent !important;
         box-shadow: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
     }
 
     /* Centrado del botón */
@@ -131,25 +124,9 @@ st.markdown("""
         display: flex;
         justify-content: center;
     }
-
-    /* 🌟 Animación de aparición */
-    @keyframes fadeIn {
-        from {opacity: 0; transform: translateY(15px);}
-        to {opacity: 1; transform: translateY(0);}
-    }
-
-    /* 💓 Animación de “pulso” suave en el botón */
-    @keyframes pulse {
-        0% { transform: scale(1); box-shadow: 0 0 10px rgba(255, 192, 203, 0.4); }
-        50% { transform: scale(1.05); box-shadow: 0 0 25px rgba(255, 182, 193, 0.7); }
-        100% { transform: scale(1); box-shadow: 0 0 10px rgba(255, 192, 203, 0.4); }
-    }
-
-    .bk-root .bk-btn {
-        animation: pulse 3s infinite ease-in-out;
-    }
     </style>
 """, unsafe_allow_html=True)
+
 
 
 image = Image.open('voice_ctrl.jpg')
