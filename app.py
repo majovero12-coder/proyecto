@@ -32,7 +32,7 @@ client1.on_message = on_message
 st.title("CASA INTELIGENTE")
 st.subheader("CONTROL POR VOZ")
 
-st.markdown("""
+sst.markdown("""
     <style>
     /* Fondo general con degradado */
     [data-testid="stAppViewContainer"] {
@@ -45,7 +45,6 @@ st.markdown("""
         backdrop-filter: blur(10px);
     }
 
-    /* Sidebar (si la usas en el futuro) */
     [data-testid="stSidebar"] {
         background-color: #ede7f6;
     }
@@ -54,12 +53,15 @@ st.markdown("""
         color: #4a148c;
         font-family: 'Poppins', sans-serif;
         text-align: center;
+        font-weight: 700;
     }
+
     h2, h3 {
         color: #6a1b9a;
         font-family: 'Poppins', sans-serif;
         text-align: center;
     }
+
     .stButton>button {
         background: linear-gradient(135deg, #7e57c2, #9575cd);
         color: white;
@@ -75,13 +77,23 @@ st.markdown("""
         background: linear-gradient(135deg, #5e35b1, #7b1fa2);
         transform: scale(1.05);
     }
+
     .block {
-        background-color: rgba(255, 255, 255, 0.8);
+        background-color: rgba(255, 255, 255, 0.85);
         padding: 1.5em;
         border-radius: 16px;
         box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         margin: 1.5em 0;
     }
+
+    .subtitle {
+        font-family: 'Poppins', sans-serif;
+        color: #6a1b9a;
+        text-align: center;
+        font-size: 1.1em;
+        margin-bottom: 0.8em;
+    }
+
     </style>
 """, unsafe_allow_html=True)
 
