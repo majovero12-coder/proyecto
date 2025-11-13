@@ -131,11 +131,6 @@ st.markdown("""
         justify-content: center;
     }
 
-    /* 🌟 Animación de aparición */
-    @keyframes fadeIn {
-        from {opacity: 0; transform: translate
-
-
 
 image = Image.open('voice_ctrl.jpg')
 st.image(image, width=200)
