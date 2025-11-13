@@ -33,61 +33,45 @@ st.title("CASA INTELIGENTE")
 st.subheader("CONTROL POR VOZ")
 
 st.markdown("""
-    <style>
-    [data-testid="stAppViewContainer"] {
-        background: linear-gradient(135deg, #e8eaf6 0%, #f3e5f5 100%);
-    }
+<button class="voice-button" id="speak-btn">🎧 Iniciar escucha</button>
+<div id="result" class="result-box" style="display:none;"></div>
 
-    [data-testid="stHeader"] {
-        background: rgba(255,255,255,0.4);
-        backdrop-filter: blur(10px);
-    }
+<script>
+let button = document.getElementById("speak-btn");
+let resultDiv = document.getElementById("result");
 
-    [data-testid="stSidebar"] {
-        background-color: #ede7f6;
-    }
+if ('webkitSpeechRecognition' in window) {
+  const recognition = new webkitSpeechRecognition();
+  recognition.lang = 'es-ES';
+  recognition.continuous = false;
+  recognition.interimResults = false;
 
-    h1 {
-        color: #4a148c;
-        font-family: 'Poppins', sans-serif;
-        text-align: center;
-    }
+  button.onclick = () => {
+    recognition.start();
+    button.innerText = "🎙️ Escuchando...";
+    button.style.opacity = "0.8";
+  };
 
-    .stButton>button {
-        background: linear-gradient(135deg, #7e57c2, #9575cd);
-        color: white;
-        border: none;
-        border-radius: 12px;
-        padding: 0.75em 1.5em;
-        font-size: 1em;
-        font-family: 'Poppins', sans-serif;
-        font-weight: 500;
-        box-shadow: 0px 3px 8px rgba(0,0,0,0.2);
-        transition: all 0.3s ease;
-    }
-    .stButton>button:hover {
-        background: linear-gradient(135deg, #5e35b1, #7b1fa2);
-        transform: scale(1.05);
-    }
+  recognition.onresult = function(event) {
+    const text = event.results[0][0].transcript;
+    button.innerText = "🎧 Iniciar escucha";
+    button.style.opacity = "1";
+    resultDiv.innerHTML = "🗣️ Comando detectado: <b>" + text + "</b>";
+    resultDiv.style.display = "block";
+    window.parent.postMessage({type: "speech", value: text}, "*");
+  };
 
-    .card {
-        background-color: rgba(255,255,255,0.8);
-        border-radius: 16px;
-        padding: 1.5em;
-        margin-top: 1.2em;
-        box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
-    }
-
-    .slider-label {
-        color: #6a1b9a;
-        font-family: 'Poppins', sans-serif;
-        font-weight: 500;
-        margin-bottom: 0.5em;
-    }
-
-    </style>
+  recognition.onerror = function() {
+    button.innerText = "🎧 Iniciar escucha";
+    button.style.opacity = "1";
+  };
+} else {
+  button.innerText = "Micrófono no soportado ❌";
+}
+</script>
 """, unsafe_allow_html=True)
 
+st.markdown('</div>', unsafe_allow_html=True)
 
 
 image = Image.open('voice_ctrl.jpg')
