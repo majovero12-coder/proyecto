@@ -29,7 +29,7 @@ client1.on_message = on_message
 
 
 
-st.title("INTERFACES MULTIMODALES")
+st.title("CASA INTELIGENTE")
 st.subheader("CONTROL POR VOZ")
 
 st.markdown("""
