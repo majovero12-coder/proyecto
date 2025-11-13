@@ -34,109 +34,107 @@ st.subheader("CONTROL POR VOZ")
 
 st.markdown("""
     <style>
-    /* Fondo con gradiente pastel */
+    /* 🌈 Fondo con gradiente pastel */
     [data-testid="stAppViewContainer"] {
-        background: radial-gradient(circle at top left, #ffe6f2 0%, #e4d9ff 100%);
+        background: linear-gradient(135deg, #ffe6f9 0%, #e0d6ff 100%);
+        animation: fadeIn 1.2s ease-in;
     }
 
-    /* Centrar todo el contenido */
+    /* ✨ Centrar contenido */
     .main {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         text-align: center;
-        margin-top: -30px;
+        padding-top: 10px;
     }
 
-    /* Título principal */
+    /* 🌸 Título principal */
     h1 {
         text-align: center;
-        color: #673ab7;
-        font-family: 'Poppins', sans-serif;
+        color: #a63ec5;
+        font-family: 'Baloo 2', 'Comic Sans MS', cursive;
         font-weight: 800;
-        font-size: 2.8em !important;
+        font-size: 2.9em !important;
         letter-spacing: 1px;
-        text-shadow: 0 2px 6px rgba(0,0,0,0.2);
-        margin-bottom: 0.1em;
+        text-shadow: 0 3px 6px rgba(166, 62, 197, 0.3);
+        margin-bottom: 0.2em;
     }
 
-    /* Subtítulo */
+    /* 💜 Subtítulo */
     h2, h3 {
         text-align: center;
-        color: #8e24aa;
+        color: #9b4edd;
         font-family: 'Poppins', sans-serif;
-        font-weight: 500;
-        margin-bottom: 1.5em;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        margin-bottom: 1.2em;
     }
 
-    /* Imagen centrada y con efecto */
+    /* 💫 Imagen redonda con brillo */
     [data-testid="stImage"] img {
         display: block;
-        margin-left: auto;
-        margin-right: auto;
-        border-radius: 50%;
+        margin: auto;
         width: 180px;
         height: 180px;
-        box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        border-radius: 50%;
+        box-shadow: 0 0 25px rgba(170, 85, 255, 0.3);
         transition: transform 0.4s ease, box-shadow 0.4s ease;
+        border: 4px solid white;
     }
 
     [data-testid="stImage"] img:hover {
-        transform: scale(1.08);
-        box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+        transform: scale(1.1);
+        box-shadow: 0 0 35px rgba(240, 100, 255, 0.6);
     }
 
-    /* Texto */
+    /* 🎀 Texto normal */
     p, div, span {
         font-family: 'Poppins', sans-serif;
-        color: #3c3c3c;
+        color: #4a4a4a;
         text-align: center;
+        font-size: 1.05em;
     }
 
-    /* Botón del reconocimiento de voz */
+    /* 🎤 Botón de voz */
     .bk-root .bk-btn {
-        background: linear-gradient(135deg, #f48fb1, #ce93d8, #9575cd);
+        background: linear-gradient(135deg, #ff80ab, #ce93d8, #b39ddb);
         color: white !important;
-        border-radius: 30px !important;
+        border-radius: 50px !important;
         border: none !important;
         font-size: 1.2em !important;
-        font-family: 'Poppins', sans-serif;
-        padding: 12px 35px !important;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+        font-family: 'Baloo 2', 'Poppins', sans-serif;
+        font-weight: 600;
+        padding: 12px 40px !important;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.2);
         transition: all 0.3s ease;
-        margin-top: 10px;
+        margin-top: 15px;
+        width: 220px;
     }
 
     .bk-root .bk-btn:hover {
-        background: linear-gradient(135deg, #ec407a, #ab47bc, #7e57c2);
-        transform: scale(1.07);
-        box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+        background: linear-gradient(135deg, #f06292, #ba68c8, #9575cd);
+        transform: scale(1.08);
+        box-shadow: 0 8px 22px rgba(0,0,0,0.3);
     }
 
-    /* Eliminar fondo blanco de contenedores */
+    /* 💖 Eliminar fondo blanco que aparece debajo del botón */
     div[data-testid="stVerticalBlock"], div[data-testid="stVerticalBlock"] > div {
         background: transparent !important;
         box-shadow: none !important;
     }
 
-    /* Centrado del botón */
+    /* 🪩 Centrado del botón */
     .bk-root {
         display: flex;
         justify-content: center;
     }
 
-    /* Animación sutil en hover general */
+    /* 🌟 Animación de aparición */
     @keyframes fadeIn {
-        from {opacity: 0; transform: translateY(10px);}
-        to {opacity: 1; transform: translateY(0);}
-    }
+        from {opacity: 0; transform: translate
 
-    .main, h1, h2, [data-testid="stImage"], .bk-root {
-        animation: fadeIn 1s ease forwards;
-    }
-    </style>
-""", unsafe_allow_html=True)
 
 
 image = Image.open('voice_ctrl.jpg')
