@@ -74,15 +74,17 @@ st.title("🏠 CASA INTELIGENTE")
 st.markdown("<h2>🎙️ CONTROL POR VOZ</h2>", unsafe_allow_html=True)
 
 # --- IMAGEN CENTRADA
+
 with st.container():
     st.markdown("<div class='center'>", unsafe_allow_html=True)
 
     if os.path.exists("voice_ctrl.jpg"):
-        st.image("voice_ctrl.jpg", width=180, output_format="PNG", use_column_width=False)
+        st.image("voice_ctrl.jpg", width=140, output_format="PNG", use_column_width=False)
     else:
-        st.image("https://cdn-icons-png.flaticon.com/512/727/727245.png", width=180)
+        st.image("https://cdn-icons-png.flaticon.com/512/727/727245.png", width=140)
 
     st.markdown("</div>", unsafe_allow_html=True)
+
 
 # Texto
 st.markdown("<p class='center'>🎤 Toca el botón y habla</p>", unsafe_allow_html=True)
