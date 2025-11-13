@@ -81,7 +81,7 @@ with st.container():
     if os.path.exists("voice_ctrl.jpg"):
         st.image("voice_ctrl.jpg", width=140, output_format="PNG", use_column_width=False)
     else:
-        st.image("https://cdn-icons-png.flaticon.com/512/727/727245.png", width=140)
+        st.image("https://cdn-icons-png.flaticon.com/512/727/727245.png", width=120)
 
     st.markdown("</div>", unsafe_allow_html=True)
 
