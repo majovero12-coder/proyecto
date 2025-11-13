@@ -79,9 +79,9 @@ with st.container():
     st.markdown("<div class='center'>", unsafe_allow_html=True)
 
     if os.path.exists("voice_ctrl.jpg"):
-        st.image("voice_ctrl.jpg", width=40, output_format="PNG", use_column_width=False)
+        st.image("voice_ctrl.jpg", width=30, output_format="PNG", use_column_width=False)
     else:
-        st.image("https://cdn-icons-png.flaticon.com/512/727/727245.png", width=40)
+        st.image("https://cdn-icons-png.flaticon.com/512/727/727245.png", width=30)
 
     st.markdown("</div>", unsafe_allow_html=True)
 
