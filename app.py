@@ -31,15 +31,14 @@ client1.on_message = on_message
 
 st.title("INTERFACES MULTIMODALES")
 st.subheader("CONTROL POR VOZ")
-
 st.markdown("""
     <style>
-    /* 🌷 Fondo rosado pastel en degradé horizontal */
+    /* 🌸 Fondo rosado pastel en degradé horizontal */
     [data-testid="stAppViewContainer"] {
         background: linear-gradient(90deg, #ffe5ec 0%, #ffd6e0 50%, #fddde6 100%);
     }
 
-    /* Centrar contenido */
+    /* Centrar todo el contenido */
     .main {
         display: flex;
         flex-direction: column;
@@ -52,67 +51,70 @@ st.markdown("""
     /* 💕 Título principal */
     h1 {
         text-align: center;
-        color: #d63384;
-        font-family: 'Quicksand', 'Poppins', sans-serif;
-        font-weight: 800;
+        color: #b22c77;
+        font-family: 'Playfair Display', serif;
+        font-weight: 700;
         font-size: 3em !important;
-        letter-spacing: 1px;
-        text-shadow: 0 2px 8px rgba(214, 51, 132, 0.2);
+        letter-spacing: 0.5px;
         margin-bottom: 0.3em;
     }
 
     /* 💖 Subtítulo */
     h2, h3 {
         text-align: center;
-        color: #a83279;
-        font-family: 'Quicksand', 'Poppins', sans-serif;
+        color: #8e3a76;
+        font-family: 'Playfair Display', serif;
         font-weight: 600;
-        font-size: 1.6em;
+        font-size: 1.7em;
         margin-bottom: 1.5em;
     }
 
-    /* 📸 Imagen rectangular centrada con bordes redondeados */
+    /* 📸 Imagen centrada (rectangular, no redonda) */
+    [data-testid="stImage"] {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+
     [data-testid="stImage"] img {
         display: block;
-        margin-left: auto;
-        margin-right: auto;
-        border-radius: 20px;
-        border: none;
+        margin: auto;
+        border-radius: 18px;
         width: 380px;
         height: auto;
-        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        border: none;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.15);
     }
 
-    /* ✨ Texto principal */
+    /* ✨ Texto general */
     p, div, span {
-        font-family: 'Quicksand', 'Poppins', sans-serif;
-        color: #4a4a4a;
+        font-family: 'Playfair Display', serif;
+        color: #3c3c3c;
         text-align: center;
-        font-size: 1.05em;
-        letter-spacing: 0.3px;
+        font-size: 1.1em;
     }
 
-    /* 🌈 Botón */
+    /* 🌈 Botón elegante */
     .bk-root .bk-btn {
-        background: linear-gradient(90deg, #ffb6c1, #f48fb1, #f8a5c2);
+        background: linear-gradient(90deg, #f4a5c2, #e67fa1, #db5f8c);
         color: white !important;
-        border-radius: 50px !important;
+        border-radius: 40px !important;
         border: none !important;
-        font-size: 1.3em !important;
-        font-family: 'Quicksand', sans-serif;
-        font-weight: 700;
+        font-size: 1.2em !important;
+        font-family: 'Playfair Display', serif;
+        font-weight: 600;
         padding: 12px 40px !important;
-        box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-        margin-top: 15px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         width: 240px;
+        margin-top: 10px;
     }
 
     .bk-root .bk-btn:hover {
-        background: linear-gradient(90deg, #f06292, #ec407a, #d81b60);
+        background: linear-gradient(90deg, #e6679d, #c94d7d, #a73963);
     }
 
-    /* 💖 Quitar el cuadro blanco inferior */
-    div[data-testid="stVerticalBlock"], div[data-testid="stVerticalBlock"] > div {
+    /* 💖 Eliminar por completo el recuadro blanco */
+    div[data-testid="stVerticalBlock"], div[data-testid="stVerticalBlock"] > div, div.block-container {
         background: transparent !important;
         box-shadow: none !important;
         padding: 0 !important;
@@ -126,6 +128,7 @@ st.markdown("""
     }
     </style>
 """, unsafe_allow_html=True)
+
 
 
 
