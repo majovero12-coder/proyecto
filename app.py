@@ -32,13 +32,12 @@ client1.on_message = on_message
 st.title("INTERFACES MULTIMODALES")
 st.subheader("CONTROL POR VOZ")
 
-st.markdown("""
+sst.markdown("""
     <style>
-    /* 🌈 Fondo con gradiente pastel */
-    [data-testid="stAppViewContainer"] {
-        background: linear-gradient(135deg, #ffe6f9 0%, #e0d6ff 100%);
-        animation: fadeIn 1.2s ease-in;
-    }
+    /* aquí va tu CSS */
+    </style>
+""", unsafe_allow_html=True)
+
 
     /* ✨ Centrar contenido */
     .main {
