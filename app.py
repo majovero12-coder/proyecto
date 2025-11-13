@@ -32,14 +32,15 @@ client1.on_message = on_message
 st.title("INTERFACES MULTIMODALES")
 st.subheader("CONTROL POR VOZ")
 
-sst.markdown("""
+st.markdown("""
     <style>
-    /* aquí va tu CSS */
-    </style>
-""", unsafe_allow_html=True)
+    /* 🌸 Fondo en degradé horizontal rosado pastel */
+    [data-testid="stAppViewContainer"] {
+        background: linear-gradient(90deg, #ffe5ec 0%, #ffd6e0 50%, #fddde6 100%);
+        animation: fadeIn 1.2s ease-in;
+    }
 
-
-    /* ✨ Centrar contenido */
+    /* Centrar contenido */
     .main {
         display: flex;
         flex-direction: column;
@@ -49,25 +50,25 @@ sst.markdown("""
         padding-top: 10px;
     }
 
-    /* 🌸 Título principal */
+    /* 🌺 Título principal */
     h1 {
         text-align: center;
-        color: #a63ec5;
-        font-family: 'Baloo 2', 'Comic Sans MS', cursive;
+        color: #d63384;
+        font-family: 'Quicksand', 'Poppins', sans-serif;
         font-weight: 800;
-        font-size: 2.9em !important;
+        font-size: 3em !important;
         letter-spacing: 1px;
-        text-shadow: 0 3px 6px rgba(166, 62, 197, 0.3);
+        text-shadow: 0 3px 10px rgba(214, 51, 132, 0.2);
         margin-bottom: 0.2em;
     }
 
-    /* 💜 Subtítulo */
+    /* 💖 Subtítulo */
     h2, h3 {
         text-align: center;
-        color: #9b4edd;
-        font-family: 'Poppins', sans-serif;
+        color: #a83279;
+        font-family: 'Quicksand', 'Poppins', sans-serif;
         font-weight: 600;
-        letter-spacing: 0.5px;
+        font-size: 1.6em;
         margin-bottom: 1.2em;
     }
 
@@ -75,60 +76,80 @@ sst.markdown("""
     [data-testid="stImage"] img {
         display: block;
         margin: auto;
-        width: 180px;
-        height: 180px;
+        width: 190px;
+        height: 190px;
         border-radius: 50%;
-        box-shadow: 0 0 25px rgba(170, 85, 255, 0.3);
-        transition: transform 0.4s ease, box-shadow 0.4s ease;
         border: 4px solid white;
+        box-shadow: 0 0 25px rgba(255, 128, 171, 0.35);
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
     }
 
     [data-testid="stImage"] img:hover {
-        transform: scale(1.1);
-        box-shadow: 0 0 35px rgba(240, 100, 255, 0.6);
+        transform: scale(1.08);
+        box-shadow: 0 0 40px rgba(255, 140, 200, 0.6);
     }
 
-    /* 🎀 Texto normal */
+    /* ✨ Texto principal */
     p, div, span {
-        font-family: 'Poppins', sans-serif;
+        font-family: 'Quicksand', 'Poppins', sans-serif;
         color: #4a4a4a;
         text-align: center;
-        font-size: 1.05em;
+        font-size: 1.1em;
+        letter-spacing: 0.3px;
     }
 
-    /* 🎤 Botón de voz */
+    /* 🌈 Botón del reconocimiento de voz */
     .bk-root .bk-btn {
-        background: linear-gradient(135deg, #ff80ab, #ce93d8, #b39ddb);
+        background: linear-gradient(90deg, #ffb6c1, #f48fb1, #f8a5c2);
         color: white !important;
         border-radius: 50px !important;
         border: none !important;
-        font-size: 1.2em !important;
-        font-family: 'Baloo 2', 'Poppins', sans-serif;
-        font-weight: 600;
+        font-size: 1.3em !important;
+        font-family: 'Quicksand', sans-serif;
+        font-weight: 700;
         padding: 12px 40px !important;
         box-shadow: 0 6px 18px rgba(0,0,0,0.2);
         transition: all 0.3s ease;
         margin-top: 15px;
-        width: 220px;
+        width: 240px;
     }
 
     .bk-root .bk-btn:hover {
-        background: linear-gradient(135deg, #f06292, #ba68c8, #9575cd);
-        transform: scale(1.08);
+        background: linear-gradient(90deg, #f06292, #ec407a, #d81b60);
+        transform: scale(1.07);
         box-shadow: 0 8px 22px rgba(0,0,0,0.3);
     }
 
-    /* 💖 Eliminar fondo blanco que aparece debajo del botón */
+    /* 💕 Eliminar cuadro blanco */
     div[data-testid="stVerticalBlock"], div[data-testid="stVerticalBlock"] > div {
         background: transparent !important;
         box-shadow: none !important;
     }
 
-    /* 🪩 Centrado del botón */
+    /* Centrado del botón */
     .bk-root {
         display: flex;
         justify-content: center;
     }
+
+    /* 🌟 Animación de aparición */
+    @keyframes fadeIn {
+        from {opacity: 0; transform: translateY(15px);}
+        to {opacity: 1; transform: translateY(0);}
+    }
+
+    /* 💓 Animación de “pulso” suave en el botón */
+    @keyframes pulse {
+        0% { transform: scale(1); box-shadow: 0 0 10px rgba(255, 192, 203, 0.4); }
+        50% { transform: scale(1.05); box-shadow: 0 0 25px rgba(255, 182, 193, 0.7); }
+        100% { transform: scale(1); box-shadow: 0 0 10px rgba(255, 192, 203, 0.4); }
+    }
+
+    .bk-root .bk-btn {
+        animation: pulse 3s infinite ease-in-out;
+    }
+    </style>
+""", unsafe_allow_html=True)
 
 
 image = Image.open('voice_ctrl.jpg')
