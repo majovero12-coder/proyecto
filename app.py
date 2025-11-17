@@ -32,58 +32,71 @@ st.title("INTERFACES MULTIMODALES")
 st.subheader("CONTROL POR VOZ")
 
 st.markdown("""
-    <style>
-    /* Fondo animado tipo gradiente en movimiento */
-    @keyframes gradientBG {
-        0% {background-position: 0% 50%;}
-        50% {background-position: 100% 50%;}
-        100% {background-position: 0% 50%;}
-    }
-    .stApp {
-        background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #a1c4fd, #c2e9fb);
-        background-size: 400% 400%;
-        animation: gradientBG 15s ease infinite;
-        font-family: 'Segoe UI', sans-serif;
-    }
-
-    /* Títulos grandes y con sombra */
-    h1, h2 {
-        color: #6a00f4;
-        text-shadow: 2px 2px 8px rgba(160, 80, 255, 0.5);
-        text-align: center;
-    }
-
-    /* Botón con animación pulsante */
-    button {
-        background: linear-gradient(90deg, #ff6f91, #ff9671);
-        color: white !important;
-        border-radius: 16px;
-        font-size: 18px;
-        font-weight: 700;
-        transition: transform 0.2s, box-shadow 0.2s;
-    }
-    button:hover {
-        transform: scale(1.1);
-        box-shadow: 0 6px 20px rgba(255, 105, 180, 0.5);
-    }
-
-    /* Imagen centrada con borde redondeado y sombra */
-    [data-testid="stImage"] {
-        display: flex;
-        justify-content: center;
-    }
-    [data-testid="stImage"] img {
-        border-radius: 20px;
-        box-shadow: 0 8px 30px rgba(0,0,0,0.3);
-    }
-
-    /* Texto instructivo centrado y más grande */
-    p, label, span, h3 {
-        font-size: 18px;
-        color: #2d2d2d;
-        text-align: center;
-    }
-    </style>
+<style>
+[data-testid="stAppViewContainer"] {
+    background: linear-gradient(135deg, #ede7f6 0%, #f3e5f5 100%);
+}
+[data-testid="stHeader"] {
+    background: rgba(255,255,255,0.4);
+    backdrop-filter: blur(8px);
+}
+h1 {
+    color: #3a2c5a;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    margin-bottom: 0.2em;
+}
+h2 {
+    color: #5b3f8c;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3em;
+    margin-bottom: 1em;
+}
+.card {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 2em;
+    border-radius: 16px;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.1);
+    margin-top: 1.2em;
+    text-align: center;
+}
+.stButton>button {
+    background: linear-gradient(135deg, #7e57c2, #9575cd);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 0.75em 1.5em;
+    font-size: 1em;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    width: 240px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+.stButton>button:hover {
+    background: linear-gradient(135deg, #6a1b9a, #7b1fa2);
+    transform: scale(1.05);
+}
+.subtitle {
+    font-family: 'Poppins', sans-serif;
+    color: #5b3f8c;
+    text-align: center;
+    font-size: 1.05em;
+    margin-bottom: 1em;
+}
+.voice-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 110px;
+    border-radius: 50%;
+    padding: 10px;
+    background-color: rgba(255,255,255,0.7);
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.15);
+}
+</style>
 """, unsafe_allow_html=True)
 
 image = Image.open('voice_ctrl.jpg')
