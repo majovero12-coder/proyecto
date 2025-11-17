@@ -33,71 +33,57 @@ st.subheader("CONTROL POR VOZ")
 
 st.markdown("""
 <style>
+/* Fondo morado hermoso */
 [data-testid="stAppViewContainer"] {
-    background: linear-gradient(135deg, #ede7f6 0%, #f3e5f5 100%);
+    background: linear-gradient(135deg, #d9c8ff 0%, #f3e5ff 100%);
 }
-[data-testid="stHeader"] {
-    background: rgba(255,255,255,0.4);
-    backdrop-filter: blur(8px);
-}
-h1 {
-    color: #3a2c5a;
+
+/* Títulos */
+h1, h2 {
     text-align: center;
+    color: #3a2c5a;
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
-    margin-bottom: 0.2em;
 }
-h2 {
-    color: #5b3f8c;
-    text-align: center;
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.3em;
-    margin-bottom: 1em;
+
+/* Centrar la imagen */
+.img-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.card {
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 2em;
-    border-radius: 16px;
-    box-shadow: 0px 3px 10px rgba(0,0,0,0.1);
-    margin-top: 1.2em;
-    text-align: center;
-}
-.stButton>button {
-    background: linear-gradient(135deg, #7e57c2, #9575cd);
-    color: white;
-    border: none;
-    border-radius: 12px;
-    padding: 0.75em 1.5em;
-    font-size: 1em;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-    width: 240px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-}
-.stButton>button:hover {
-    background: linear-gradient(135deg, #6a1b9a, #7b1fa2);
-    transform: scale(1.05);
-}
-.subtitle {
-    font-family: 'Poppins', sans-serif;
-    color: #5b3f8c;
-    text-align: center;
-    font-size: 1.05em;
-    margin-bottom: 1em;
-}
+
+/* Imagen redondeada y sombra suave */
 .voice-img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 110px;
-    border-radius: 50%;
-    padding: 10px;
-    background-color: rgba(255,255,255,0.7);
-    box-shadow: 0px 2px 8px rgba(0,0,0,0.15);
+    width: 130px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 18px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.20);
+}
+
+/* ---- ESTILO ESPECIAL DEL BOTÓN BOKEH ---- */
+.bk-root .bk-btn {
+    background: linear-gradient(135deg, #7e57c2, #9575cd) !important;
+    color: white !important;
+    border-radius: 14px !important;
+    border: none !important;
+    padding: 10px 20px !important;
+    font-size: 15px !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 500 !important;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.2) !important;
+    transition: 0.25s ease-in-out !important;
+    cursor: pointer !important;
+}
+
+.bk-root .bk-btn:hover {
+    transform: scale(1.05) !important;
+    background: linear-gradient(135deg, #6a1b9a, #7b1fa2) !important;
 }
 </style>
 """, unsafe_allow_html=True)
+
 
 image = Image.open('voice_ctrl.jpg')
 st.image(image, width=350)  # Imagen centrada y más grande
