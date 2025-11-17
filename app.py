@@ -62,25 +62,6 @@ h1, h2 {
     box-shadow: 0px 4px 12px rgba(0,0,0,0.20);
 }
 
-.bk-root .bk-btn {
-    background-color: #7e3bd1 !important;
-    background: linear-gradient(135deg, #7e3bd1, #9b60f2) !important;
-    color: white !important;
-    border: none !important;
-    border-radius: 12px !important;
-    padding: 10px 20px !important;
-    font-size: 16px !important;
-    font-family: 'Poppins', sans-serif !important;
-    font-weight: 600 !important;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.2) !important;
-    cursor: pointer !important;
-    transition: 0.2s ease-in-out !important;
-}
-
-.bk-root .bk-btn:hover {
-    transform: scale(1.05) !important;
-    background: linear-gradient(135deg, #6a1bb0, #8c39e0) !important;
-}
 
 </style>
 """, unsafe_allow_html=True)
